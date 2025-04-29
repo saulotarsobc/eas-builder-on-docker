@@ -5,6 +5,7 @@ Este projeto fornece imagens Docker para build local de aplicativos Expo/React N
 ## Help
 
 - [Execute o EAS Build localmente com o sinalizador local](https://docs.expo.dev/build-reference/local-builds/)
+- [Acesso programático](https://docs.expo.dev/accounts/programmatic-access/)
 
 ## Características
 
