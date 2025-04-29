@@ -2,6 +2,14 @@
 
 Este projeto fornece imagens Docker para build local de aplicativos Expo/React Native usando EAS CLI.
 
+## Docker Hub
+
+As imagens Docker estão disponíveis no Docker Hub:
+
+- [expo-builder:50](https://hub.docker.com/repository/docker/saulotarsobc/eas-builder-sc/tags?name=50)
+- [expo-builder:51](https://hub.docker.com/repository/docker/saulotarsobc/eas-builder-sc/tags?name=51)
+- [expo-builder:52](https://hub.docker.com/repository/docker/saulotarsobc/eas-builder-sc/tags?name=52)
+
 ## Help
 
 - [Execute o EAS Build localmente com o sinalizador local](https://docs.expo.dev/build-reference/local-builds/)
@@ -29,7 +37,16 @@ Este projeto fornece imagens Docker para build local de aplicativos Expo/React N
 
 ```conf
 EXPO_TOKEN="seu-token-aqui"
+PROFILE="seu-perfil-aqui"
 ```
+
+### EXPO_TOKEN
+- O token é necessário para acessar o EAS.
+- O token deve ser criado no [expo.dev](https://expo.dev/settings/access-tokens)
+
+### PROFILE
+- O profile é necessário para acessar o EAS.
+- Deve ser configura no `app.json` do projeto.
 
 ### 2. Preparação do Ambiente
 
