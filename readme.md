@@ -12,6 +12,7 @@ As imagens Docker estão disponíveis no Docker Hub:
 
 ## Help
 
+- [Infraestrutura dos servidores de build](https://docs.expo.dev/build-reference/infrastructure/)
 - [Execute o EAS Build localmente com o sinalizador local](https://docs.expo.dev/build-reference/local-builds/)
 - [Acesso programático](https://docs.expo.dev/accounts/programmatic-access/)
 
