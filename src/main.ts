@@ -31,22 +31,17 @@ function run({ label, command, args = [] }: RunCommand): Promise<void> {
     });
 
     proc.on("error", (err) => {
-      const errorMsg = `Erro ao executar "${command}": ${err.message}`;
+      const errorMsg = `Error executing "${command}": ${err.message}`;
       console.error(errorMsg);
       writeLog(errorMsg);
       reject(err);
     });
 
     proc.on("exit", (code) => {
-      const statusMsg =
-        code === 0
-          ? `✅ Comando "${command}" executado com sucesso.`
-          : `❌ Processo "${command}" terminou com código ${code}`;
-      console.log(statusMsg);
       if (code === 0) {
         resolve();
       } else {
-        reject(new Error(`Processo terminou com código ${code}`));
+        reject(new Error(`Process exited with code ${code}`));
       }
     });
   });
@@ -56,11 +51,11 @@ async function main() {
   try {
     if (process.env.EXPO_TOKEN) {
       await run({
-        label: "Autenticando usuário",
+        label: "Authenticating user",
         command: "eas whoami",
       });
     } else {
-      const warning = "⚠️  EXPO_TOKEN não definida. Usuário não autenticado.";
+      const warning = "⚠️  EXPO_TOKEN not defined. User not authenticated.";
       console.warn(`\n${warning}`);
       writeLog(warning);
     }
@@ -106,9 +101,8 @@ async function main() {
     });
 
     await run({
-      label: "npm install",
-      command: "npm install",
-      args: ["install"],
+      label: "Install Dependencies",
+      command: "npm install --force",
     });
 
     await run({
@@ -117,7 +111,7 @@ async function main() {
       args: ["build", "-p", "android", "--profile", "production", "--local"],
     });
   } catch (error) {
-    console.error("Erro durante a execução:", error);
+    console.error("Error during execution:", error);
     process.exit(1);
   }
 }
