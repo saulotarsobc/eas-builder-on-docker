@@ -1,10 +1,10 @@
-- [Home](../)
-
----
-
 # EAS Builder Docker
 
 Este projeto fornece imagens Docker para build local de aplicativos Expo/React Native usando EAS CLI.
+
+## Help
+
+- [Execute o EAS Build localmente com o sinalizador local](https://docs.expo.dev/build-reference/local-builds/)
 
 ## Características
 
@@ -25,6 +25,7 @@ Este projeto fornece imagens Docker para build local de aplicativos Expo/React N
 
 - Acesse o [expo.dev](https://expo.dev/settings/access-tokens) e crie um token
 - Adicione o token no arquivo `eas.env`:
+
 ```conf
 EXPO_TOKEN="seu-token-aqui"
 ```
@@ -32,6 +33,7 @@ EXPO_TOKEN="seu-token-aqui"
 ### 2. Preparação do Ambiente
 
 Execute o script PowerShell para baixar as ferramentas necessárias:
+
 ```powershell
 .\download_tools.ps1
 ```
@@ -41,6 +43,7 @@ Execute o script PowerShell para baixar as ferramentas necessárias:
 ### Build das Imagens
 
 Para diferentes versões do Expo:
+
 ```bash
 # Expo 50
 npm run build:50
@@ -68,6 +71,7 @@ npm run publish:52
 ### Recursos do Container
 
 O container está configurado com os seguintes limites:
+
 - CPUs: 8 cores
 - Memória: 16GB
 
