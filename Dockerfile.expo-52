@@ -1,4 +1,4 @@
-FROM node:18.18.0-slim AS builder
+FROM node:20.18.3-slim AS builder
 
 # Atualizando e instalando pacotes necessários
 RUN apt update && \
@@ -49,13 +49,13 @@ RUN mkdir -p $ANDROID_HOME/ndk && \
 # Instalando EAS CLI (Expo Application Services Command Line Interface)
 # Instalando ferramentas globais
 RUN npm install -g \
-    npm@9.8.1 \
-    yarn@1.22.19 \
-    pnpm@8.9.2 \
+    npm@10.8.2 \
+    yarn@1.22.22 \
+    pnpm@9.15.5 \
     eas-cli@latest \
     sharp-cli \
-    node-gyp@10.0.1 \
-    bun@1.0.14 --force
+    node-gyp@11.1.0 \
+    bun@1.2.4 --force
 
 # Script principal
 COPY dist/main.js /usr/local/bin/main.js

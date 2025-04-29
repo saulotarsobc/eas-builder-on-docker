@@ -10,7 +10,12 @@ function Download-File-With-Progress {
 
 $tools = @(
     @{
-        name = "ndk";
+        name = "android-ndk-r25c";
+        url = "https://dl.google.com/android/repository/android-ndk-r25c-windows.zip";
+        output = "android-ndk-r25c-linux.zip";
+    },
+    @{
+        name = "android-ndk-r26d";
         url = "https://dl.google.com/android/repository/android-ndk-r26d-linux.zip";
         output = "android-ndk-r26d-linux.zip";
     },
