@@ -13,7 +13,7 @@ ENV PATH="$JAVA_HOME/bin:$PATH"
 
 ENV ANDROID_HOME="/root/android"
 ENV ANDROID_SDK_ROOT="/root/android"
-ENV ANDROID_NDK_HOME="$ANDROID_HOME/ndk/android-ndk-r25c"
+ENV ANDROID_NDK_HOME="$ANDROID_HOME/ndk/android-ndk-r26d"
 ENV PATH="$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$PATH"
 
 ENV EAS_LOCAL_BUILD_SKIP_CLEANUP=0
@@ -40,8 +40,8 @@ RUN mkdir -p $ANDROID_HOME/cmdline-tools && \
     sdkmanager --update;
 
 # Configurando o Android NDK (Native Development Kit)
-# https://dl.google.com/android/repository/android-ndk-r25c-linux.zip
-COPY ./tools/android-ndk-r25c-linux.zip /tmp/ndk.zip
+# https://dl.google.com/android/repository/android-ndk-r26d-linux.zip
+COPY ./tools/android-ndk-r26d-linux.zip /tmp/ndk.zip
 RUN mkdir -p $ANDROID_HOME/ndk && \
     unzip -q /tmp/ndk.zip -d $ANDROID_HOME/ndk && \
     rm /tmp/ndk.zip;
