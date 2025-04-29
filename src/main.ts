@@ -105,11 +105,24 @@ async function main() {
       command: "npm install --force",
     });
 
-    await run({
-      label: "Build Android",
-      command: "eas",
-      args: ["build", "-p", "android", "--profile", "production", "--local"],
-    });
+    const profile = process.env.PROFILE;
+
+    if (!profile) {
+      console.error("⚠️  PROFILE not defined.");
+      process.exit(1);
+    } else {
+      await run({
+        label: "Profile",
+        command: "echo",
+        args: [profile],
+      });
+
+      await run({
+        label: "Build Android",
+        command: "eas",
+        args: ["build", "-p", "android", "--profile", profile, "--local"],
+      });
+    }
   } catch (error) {
     console.error("Error during execution:", error);
     process.exit(1);
