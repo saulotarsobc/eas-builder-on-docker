@@ -31,7 +31,6 @@ RUN mkdir -p /opt/java && \
 # Instalando Android Command-line Tools
 # https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip?hl=pt-br
 COPY ./tools/commandlinetools-linux-11076708_latest.zip /tmp/cmd-tools.zip
-COPY ./tools/commandlinetools-linux-11076708_latest.zip /tmp/cmd-tools.zip
 RUN mkdir -p $ANDROID_HOME/cmdline-tools && \
     unzip -q /tmp/cmd-tools.zip -d $ANDROID_HOME/cmdline-tools && \
     mv $ANDROID_HOME/cmdline-tools/cmdline-tools $ANDROID_HOME/cmdline-tools/latest && \
